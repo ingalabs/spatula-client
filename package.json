@@ -1,0 +1,67 @@
+{
+  "name": "spatula-client",
+  "version": "1.0.0",
+  "homepage": "https://spatula.ingalabs.hu",
+  "description": "Client for Spatula",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "build --publish onTagOrDraft"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ingalabs/spatula-client.git"
+  },
+  "keywords": [
+    "orm"
+  ],
+  "author": {
+    "name": "Antal Áron",
+    "email": "antalaron@antalaron.hu",
+    "url": "https://antalaron.hu"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ingalabs/spatula-client/issues"
+  },
+  "build": {
+    "appId": "hu.antalaron.spatula-client",
+    "productName": "Spatula",
+    "files": [
+      "dist/",
+      "node_modules/",
+      "main.js",
+      "index.html",
+      "package.json",
+      "package-lock.json"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^1.7.11",
+    "electron-builder": "^19.55.2"
+  }
+}
